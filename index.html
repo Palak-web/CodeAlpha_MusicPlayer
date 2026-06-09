@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Player</title>
+    <meta name="description" content="A visually stunning music player web app">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Player Section -->
+        <main class="player-container">
+            <div class="glass-card player-card">
+                <div class="cover-wrapper">
+                    <img src="https://picsum.photos/seed/music1/300/300" alt="Album Art" class="cover-image" id="cover">
+                </div>
+                
+                <div class="song-info">
+                    <h1 class="song-title" id="title">Song Title</h1>
+                    <p class="song-artist" id="artist">Artist Name</p>
+                </div>
+
+                <div class="progress-section">
+                    <div class="time-container">
+                        <span id="current-time">0:00</span>
+                        <span id="total-duration">0:00</span>
+                    </div>
+                    <div class="progress-bar-container" id="progress-container">
+                        <div class="progress-bar" id="progress"></div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button class="control-btn" id="prev" aria-label="Previous"><i class="fas fa-backward-step"></i></button>
+                    <button class="control-btn play-btn" id="play" aria-label="Play"><i class="fas fa-play"></i></button>
+                    <button class="control-btn" id="next" aria-label="Next"><i class="fas fa-forward-step"></i></button>
+                </div>
+
+                <div class="volume-section">
+                    <i class="fas fa-volume-up" id="volume-icon" style="cursor: pointer;"></i>
+                    <input type="range" class="volume-slider" id="volume" min="0" max="100" value="100">
+                </div>
+            </div>
+        </main>
+
+        <!-- Playlist Section -->
+        <aside class="playlist-container glass-card">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="search-input" placeholder="Search artists, songs...">
+            </div>
+            <h2>Playlist</h2>
+            <ul class="playlist" id="playlist">
+                <!-- Playlist items will be injected here via JS -->
+            </ul>
+        </aside>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
